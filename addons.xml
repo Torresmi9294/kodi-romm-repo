@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons xmlns:ns0="http://www.kodi.tv/addons" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><addon id="script.program.romm.launcher" name="RomM Launcher (Omega)" version="0.15.3" provider-name="Omega RomM Master">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1" />
+  </requires>
+  <extension point="xbmc.python.script" library="runner.py" />
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Browse your RomM library, download games, and launch via RetroArch.</summary>
+    <description lang="en_GB">
+      New: Custom poster/thumb for "Next Page" items in game lists via resources/media/next_page.png (or next.png, next-page.png, more.png).
+      Fast view switching with micro re-apply; media folder support for Store/Play/Platforms/All Installed.
+    </description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <reuselanguageinvoker>false</reuselanguageinvoker>
+  </extension>
+</addon><ns0:addon id="repository.romm.addons" name="RomM Add-ons" version="1.0.0" provider-name="Milton Torres" xsi:schemaLocation="http://www.kodi.tv/addons addon.xsd">
+
+  <ns0:extension point="xbmc.addon.repository" name="RomM Add-ons">
+    <ns0:info compressed="false">https://torresmi9294.github.io/kodi-romm-repo/addons.xml</ns0:info>
+    <ns0:checksum>https://torresmi9294.github.io/kodi-romm-repo/addons.xml.md5</ns0:checksum>
+    <ns0:datadir zip="true">https://torresmi9294.github.io/kodi-romm-repo/zips/</ns0:datadir>
+  </ns0:extension>
+
+  <ns0:extension point="xbmc.addon.metadata">
+    <ns0:summary lang="en_GB">Repository for RomM Kodi add-ons</ns0:summary>
+    <ns0:description lang="en_GB">Auto-updating repository hosting RomM-related add-ons for Kodi Omega.</ns0:description>
+    <ns0:platform>all</ns0:platform>
+    <ns0:license>MIT</ns0:license>
+    <ns0:source>https://github.com/Torresmi9294/kodi-romm-repo</ns0:source>
+    <ns0:website>https://torresmi9294.github.io/kodi-romm-repo/</ns0:website>
+    <ns0:assets>
+      <ns0:icon>icon.png</ns0:icon>
+      <ns0:fanart>fanart.png</ns0:fanart>
+    </ns0:assets>
+  </ns0:extension>
+</ns0:addon></addons>
