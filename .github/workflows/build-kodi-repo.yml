@@ -1,0 +1,51 @@
+name: Build Kodi Repo (addons.xml & md5)
+
+on:
+  push:
+    branches: [ main ]            # change if your default branch is different
+    paths:
+      - 'zips/**'
+      - 'generate_repo.py'
+      - '.github/workflows/build-kodi-repo.yml'
+  workflow_dispatch: {}            # allow manual run from the Actions tab
+
+permissions:
+  contents: write                  # REQUIRED to push updated files
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure .nojekyll and .gitattributes
+        run: |
+          touch .nojekyll
+          echo "*.zip -text -diff" >> .gitattributes
+          git add .nojekyll .gitattributes
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Ensure Pages settings (.nojekyll, .gitattributes)" || echo "No changes"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate addons.xml & addons.xml.md5
+        run: |
+          python3 generate_repo.py --zips zips --out .
+          echo "MD5: $(cat addons.xml.md5)"
+
+      - name: Commit metadata if changed
+        run: |
+          if [[ -n "$(git status --porcelain addons.xml addons.xml.md5)" ]]; then
+            git add addons.xml addons.xml.md5
+            git commit -m "Auto-generate addons.xml & addons.xml.md5"
+            git push
+          else
+            echo "No metadata changes to commit."
+          fi
