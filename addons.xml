@@ -17,17 +17,23 @@
     <license>MIT</license>
     <reuselanguageinvoker>false</reuselanguageinvoker>
   </extension>
-</addon><ns0:addon id="repository.romm.addons" name="RomM Add-ons" version="1.0.0" provider-name="Milton Torres" xsi:schemaLocation="http://www.kodi.tv/addons addon.xsd">
+</addon><ns0:addon id="repository.romm.addons" name="RomM Add-ons" version="1.0.1" provider-name="Milton Torres" xsi:schemaLocation="http://www.kodi.tv/addons addon.xsd">
+
+  <ns0:requires>
+    <ns0:import addon="xbmc.addon" version="21.0.0" />
+  </ns0:requires>
 
   <ns0:extension point="xbmc.addon.repository" name="RomM Add-ons">
-    <ns0:info compressed="false">https://torresmi9294.github.io/kodi-romm-repo/addons.xml</ns0:info>
-    <ns0:checksum>https://torresmi9294.github.io/kodi-romm-repo/addons.xml.md5</ns0:checksum>
-    <ns0:datadir zip="true">https://torresmi9294.github.io/kodi-romm-repo/zips/</ns0:datadir>
+    <ns0:dir minversion="21.0.0">
+      <ns0:info compressed="false">https://torresmi9294.github.io/kodi-romm-repo/addons.xml</ns0:info>
+      <ns0:checksum>https://torresmi9294.github.io/kodi-romm-repo/addons.xml.md5</ns0:checksum>
+      <ns0:datadir zip="true">https://torresmi9294.github.io/kodi-romm-repo/zips/</ns0:datadir>
+    </ns0:dir>
   </ns0:extension>
 
   <ns0:extension point="xbmc.addon.metadata">
     <ns0:summary lang="en_GB">Repository for RomM Kodi add-ons</ns0:summary>
-    <ns0:description lang="en_GB">Auto-updating repository hosting RomM-related add-ons for Kodi Omega.</ns0:description>
+    <ns0:description lang="en_GB">Auto-updating repository hosting RomM-related add-ons for Kodi Omega (v21+).</ns0:description>
     <ns0:platform>all</ns0:platform>
     <ns0:license>MIT</ns0:license>
     <ns0:source>https://github.com/Torresmi9294/kodi-romm-repo</ns0:source>
