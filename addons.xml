@@ -48,7 +48,7 @@
       <ns0:fanart>fanart.png</ns0:fanart>
     </ns0:assets>
   </ns0:extension>
-</ns0:addon><addon id="script.program.romm.launcher" name="RomM Launcher (Omega)" version="0.15.3" provider-name="Omega RomM Master">
+</ns0:addon><addon id="script.program.romm.launcher" name="RomM Launcher (Omega)" version="0.15.3+androidfix1" provider-name="Omega RomM Master">
   <requires>
     <import addon="xbmc.python" version="3.0.1" />
   </requires>
